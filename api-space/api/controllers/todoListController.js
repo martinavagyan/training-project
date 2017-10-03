@@ -2,7 +2,12 @@
 
 
 var mongoose = require('mongoose'),
-  Task = mongoose.model('Tasks');
+  Task = mongoose.model('Tasks'
+  
+
+exports.register_a_visitor = (req,res) => {
+    res(req.body);
+}
 
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
@@ -11,6 +16,7 @@ exports.list_all_tasks = function(req, res) {
     res.json(task);
   });
 };
+
 
 
 
