@@ -59,3 +59,5 @@ typings/
 
 routes-example
 template-forms
+
+.DS_Store
