@@ -1,0 +1,17 @@
+<form (submit)="onFormSubmitted()" #registrationForm="ngForm">
+
+  Name: <input name="name" type="text" [(ngModel)]="registration.name" required><br>
+  <div style="color: red" *ngIf="registrationForm.form.controls.name?.invalid" hidden>Name is not valid!</div>
+
+  Email: <input name="email" type="email" [(ngModel)]="registration.email" email required ><br>
+  <div style="color: red" *ngIf="registrationForm.form.controls.email?.invalid" [ngClass] = "{hidden: registrationForm.form.controls.email?.invalid}">Email is not valid!</div>
+
+  Comment: <input name="comment" type="text" [(ngModel)]="registration.comment"><br>
+
+  <app-user-list (onUserClick) = "addHost($event)"></app-user-list>
+  Host: <input name="host" type="text" [(ngModel)]="registration.host.name"><br>
+
+  <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form>
+
+<pre>{{registration | json}}</pre>
