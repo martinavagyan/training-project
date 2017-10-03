@@ -2,13 +2,13 @@
 
 
 var mongoose = require('mongoose'),
-  Task = mongoose.model('Tasks'
-  
+  Task = mongoose.model('Tasks');
 
 exports.register_a_visitor = (req,res) => {
-    res(req.body);
+    console.log(req.body);
+    res.json(req.body)
 }
-
+  
 exports.list_all_tasks = function(req, res) {
   Task.find({}, function(err, task) {
     if (err)
