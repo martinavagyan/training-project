@@ -35,7 +35,6 @@ export class RegisterFormComponent implements OnInit {
   }
 
   addHost<User>(hostUser) {
-    console.log("I am called" + hostUser.id);
     this.registration.host = hostUser;
   }
 }

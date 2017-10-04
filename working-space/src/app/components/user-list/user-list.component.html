@@ -1,7 +1,8 @@
-<div>
+<div class = "user-list-area">
   <ul>
     <li *ngFor="let user of users">
-      <a (click)="userClicked({id: user.id, name:user.name, email: user.email})">{{user.name}}</a>
+        <span class="glyphicon glyphicon-user icon-color" aria-hidden="true"></span>
+        <a class = "item-cursor" (click)="userClicked({id: user.id, name:user.name, email: user.email})">{{user.name}}</a>   
     </li>
   </ul>
 </div>
