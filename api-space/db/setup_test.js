@@ -1,3 +1,4 @@
+"use strict";
 // function connectDB(callback) {
 //     mongoClient.connect(dbConfig.testDBURL, function(err, db) {
 //         assert.equal(null, err);
@@ -5,4 +6,4 @@
 //         console.log("Connected correctly to server");
 //         callback(0);
 //     });
-// }
+// } 
