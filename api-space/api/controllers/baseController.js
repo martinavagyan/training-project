@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class Base {
     constructor(_model) {
         this.getAll = (req, res) => {
-            console.log("knock knock");
             this.model.find({}, (err, docs) => {
                 if (err) {
                     return console.error(err);
@@ -34,7 +33,6 @@ class Base {
             });
         };
         this.get = (req, res) => {
-            console.log('###########', req.params.visitorId);
             this.model.findOne({ 'visitorId': req.params.visitorId }, function (err, obj) {
                 if (err)
                     return console.error(err);

@@ -13,7 +13,7 @@ const VisitorLogSchema: Schema = new Schema({
     email       : String
   });
 
-interface IVisitorLogModel extends IVisitorLog, Document {}
+export interface IVisitorLogModel extends IVisitorLog, Document {}
 const VisitorLogModel = 
       mongoose.model<IVisitorLogModel>('VisitorLog', VisitorLogSchema);
 

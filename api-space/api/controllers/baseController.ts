@@ -1,14 +1,13 @@
+import { Schema, Model, Document } from 'mongoose';
 
+export default class Base<T extends any> {
 
-export default abstract class Base {
+     model : T;
 
-     model : any;
-
-    constructor(_model : any) {
+    constructor(_model : T) {
         this.model = _model;
     }
     public getAll = (req: any, res: any) => {
-        console.log("knock knock");
         this.model.find({}, (err:any, docs:any) => {
             if (err) {return console.error(err);}
             res.json(docs);
@@ -34,7 +33,6 @@ export default abstract class Base {
         })
     }
     public get = (req: any, res: any) => {
-        console.log('###########',req.params.visitorId);
         this.model.findOne( {'visitorId': req.params.visitorId}, function(err:any, obj:any) {
             if (err) return console.error(err);
             res.json(obj);
