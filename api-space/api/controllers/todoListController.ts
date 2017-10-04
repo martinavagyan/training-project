@@ -15,6 +15,13 @@ exports.register_a_visitor = (req: any,res:any) => {
     //res.json(req.body)
 }
 
+
+exports.get_visitor = (req: any,res:any) => {  
+  vsctrl.get(req,res);
+}
+exports.get_all = (req: any,res:any) => {  
+  vsctrl.getAll(req,res);
+}
   
 // exports.list_all_tasks = function(req, res) {
 //   Task.find({}, function(err, task) {

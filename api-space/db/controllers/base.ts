@@ -2,12 +2,13 @@
 
 export default abstract class Base {
 
-    model : any;
+     model : any;
 
     constructor(_model : any) {
         this.model = _model;
     }
     public getAll = (req: any, res: any) => {
+        console.log("knock knock");
         this.model.find({}, (err:any, docs:any) => {
             if (err) {return console.error(err);}
             res.json(docs);
@@ -33,10 +34,11 @@ export default abstract class Base {
         })
     }
     public get = (req: any, res: any) => {
-        this.model.findOne( {id: req.params.id}), (err:any, obj:any) => {
+        console.log('###########',req.params.visitorId);
+        this.model.findOne( {'visitorId': req.params.visitorId}, function(err:any, obj:any) {
             if (err) return console.error(err);
             res.json(obj);
-        }
+        });
     }
 }
 

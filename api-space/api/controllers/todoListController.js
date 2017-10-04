@@ -11,6 +11,12 @@ exports.register_a_visitor = (req, res) => {
     vsctrl.insert(req, res);
     //res.json(req.body)
 };
+exports.get_visitor = (req, res) => {
+    vsctrl.get(req, res);
+};
+exports.get_all = (req, res) => {
+    vsctrl.getAll(req, res);
+};
 // exports.list_all_tasks = function(req, res) {
 //   Task.find({}, function(err, task) {
 //     if (err)
