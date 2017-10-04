@@ -33,7 +33,7 @@ class Base {
             });
         };
         this.get = (req, res) => {
-            this.model.findOne({ 'visitorId': req.params.visitorId }, function (err, obj) {
+            this.model.findOne({ 'entryId': req.params.entryId }, function (err, obj) {
                 if (err)
                     return console.error(err);
                 res.json(obj);

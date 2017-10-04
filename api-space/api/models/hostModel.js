@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const mongoose_1 = require("mongoose");
-const VisitorLogSchema = new mongoose_1.Schema({
+const HostLogSchema = new mongoose_1.Schema({
     entryId: String,
     name: String,
     email: String
 });
-const VisitorLogModel = mongoose.model('VisitorLog', VisitorLogSchema);
-exports.default = VisitorLogModel;
+const HostLogModel = mongoose.model('HostLog', HostLogSchema);
+exports.default = HostLogModel;

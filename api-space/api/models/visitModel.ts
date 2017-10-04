@@ -4,16 +4,18 @@ import { Schema, Model, Document } from 'mongoose';
 export interface IVisitLog {
   timestamp : Date,
   visiteeId : string,
-  visitorId : string
+  visitorId : string,
+  entryId   : string
 }
 
 const VisitLogSchema: Schema = new Schema({
     timestamp   : Date,
     visiteeId   : String,
-    visitorId   : String
+    visitorId   : String,
+    entryId     : String
   });
 
-interface IVisitLogModel extends IVisitLog, Document {}
+export interface IVisitLogModel extends IVisitLog, Document {}
 const VisitLogModel = 
       mongoose.model<IVisitLogModel>('VisitLog', VisitLogSchema);
 

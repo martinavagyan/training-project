@@ -33,7 +33,7 @@ export default class Base<T extends any> {
         })
     }
     public get = (req: any, res: any) => {
-        this.model.findOne( {'visitorId': req.params.visitorId}, function(err:any, obj:any) {
+        this.model.findOne( {'entryId': req.params.entryId}, function(err:any, obj:any) {
             if (err) return console.error(err);
             res.json(obj);
         });

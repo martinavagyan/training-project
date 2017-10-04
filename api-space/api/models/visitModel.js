@@ -5,7 +5,8 @@ const mongoose_1 = require("mongoose");
 const VisitLogSchema = new mongoose_1.Schema({
     timestamp: Date,
     visiteeId: String,
-    visitorId: String
+    visitorId: String,
+    entryId: String
 });
 const VisitLogModel = mongoose.model('VisitLog', VisitLogSchema);
 exports.default = VisitLogModel;
