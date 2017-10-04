@@ -2,17 +2,19 @@ import mongoose = require('mongoose');
 import { Schema, Model, Document } from 'mongoose';
 
 export interface IVisitLog {
-  timestamp : Date,
-  visiteeId : string,
-  visitorId : string,
-  entryId   : string
+  hostId      : string,
+  entryId     : string,
+  name        : string,
+  email       : string,
+  date        : Date
 }
 
 const VisitLogSchema: Schema = new Schema({
-    timestamp   : Date,
-    visiteeId   : String,
-    visitorId   : String,
-    entryId     : String
+    hostId      : String,
+    entryId     : String,
+    name        : String,
+    email       : String,
+    date        : Date
   });
 
 export interface IVisitLogModel extends IVisitLog, Document {}

@@ -2,13 +2,12 @@ import * as mongoose from 'mongoose';
 import { Schema, Model, Document } from 'mongoose';
 
 export interface IVisitorLog {
-    entryId   : string,
-    name        : string,
-    email       : string
+    entryId   : string
+    
 }
 
 const VisitorLogSchema: Schema = new Schema({
-    entryId   : String,
+    entryId     : String,
     name        : String,
     email       : String
   });

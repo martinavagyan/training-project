@@ -10,19 +10,21 @@ import * as visitModel from '../models/visitModel';
 
 // create models controllers based on the baseController
 import BaseCtrl from './baseController';
+import VisitCtrl from './visitController';
+
 let visitorCtrl = new BaseCtrl<Model<visitorModel.IVisitorLogModel>>(visitorModel.default);
 let hostCtrl = new BaseCtrl<Model<hostModel.IHostLogModel>>(hostModel.default);
-let visitCtrl = new BaseCtrl<Model<visitModel.IVisitLogModel>>(visitModel.default);
+let visitCtrl = new VisitCtrl<Model<visitModel.IVisitLogModel>>(visitModel.default);
 
 // Visitor functions
-exports.register_a_visitor = (req: any,res:any) => {  
-    visitorCtrl.insert(req,res);   
+exports.register_a_visit = (req: any,res:any) => {  
+    visitCtrl.insert(req,res);   
 }
 exports.get_visitor = (req: any,res:any) => {  
   visitorCtrl.get(req,res);
 }
-exports.get_all_visitors = (req: any,res:any) => {  
-  visitorCtrl.getAll(req,res);
+exports.get_all_visits = (req: any,res:any) => {  
+  visitCtrl.getAll(req,res);
 }
  
 // Host functions
