@@ -1,0 +1,15 @@
+.user-list-area{
+    background: white;
+}
+
+.item-cursor{
+    cursor: pointer;
+}
+
+.icon-color{
+    color: grey;
+}
+
+ul {
+    list-style-type: none;
+}
