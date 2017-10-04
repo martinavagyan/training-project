@@ -13,5 +13,8 @@ module.exports = function(app: any) {
   //app.route('/api/get-host/:hostId').get(apiController.get_host);
   //app.route('/api/get-visit/:visitId').get(apiController.get_visit);
   //app.route('/api/get-all-visits').get(apiController.get_all_visits);
+
+  //One test endpoint
+  app.route('/api/test/').get(apiController.send_email);
 };
 

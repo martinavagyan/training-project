@@ -7,19 +7,22 @@ export class UsersService {
 
   users: User[] = [
     {
-      id: 1,
+      entryId: 1,
       name: 'Martin',
-      email: 'martinavagyan@gmail.com'
+      email: 'martinavagyan@gmail.com',
+      _id: 'sds'
     },
     {
-      id: 5,
+      entryId: 5,
       name: 'Lars',
-      email: 'larsstain@yahoo.com'
+      email: 'larsstain@yahoo.com',
+      _id: 'sdss'
     },
     {
-      id: 3,
+      entryId: 3,
       name: 'Daan',
-      email: 'dan-van@ibm.com'
+      email: 'dan-van@ibm.com',
+      _id: 'ssds'
     }
   ];
 

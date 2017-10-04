@@ -8,17 +8,7 @@ import { Registration } from '../../registration';
 })
 export class RegisterFormComponent implements OnInit {
 
-  registration: Registration = {
-    id: '',
-    name: '',
-    email: '',
-    date: new Date(),
-    host: {
-      id: 0,
-      name: '',
-      email: ''
-    },
-  };
+  registration: Registration = {host: {name:''}};
 
   constructor() { }
 
