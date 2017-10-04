@@ -45,14 +45,14 @@ exports.get_all_hosts = (req: any,res:any) => {
 exports.send_email = (req: any, res:any) =>{
   let mailOptions = {
     from: 'working.space.inc@gmail.com',
-    to: 'Daan-Van-Driel-CIC-Netherlands@ibm.com',
+    to: 'martinavagyan@gmail.com',
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
   };
   console.log(MailService);
 
-  let temp = new MailService();
-  temp.sendMail(mailOptions);
+
+  MailService.sendMail(mailOptions);
   res.sendStatus(200);
 }
 
