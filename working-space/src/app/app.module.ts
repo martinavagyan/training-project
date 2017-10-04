@@ -8,6 +8,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UsersService } from './users.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiRequestsService } from './api-requests.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { UsersService } from './users.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     UsersService,
+    ApiRequestsService,
   ],
   bootstrap: [AppComponent]
 })
