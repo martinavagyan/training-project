@@ -1,38 +1,42 @@
-abstract class Base {
 
-    abstract model : any;
 
-    getAll = (req, res) => {
-        this.model.find({}, (err, docs) => {
+export default abstract class Base {
+
+    model : any;
+
+    constructor(_model : any) {
+        this.model = _model;
+    }
+    public getAll = (req: any, res: any) => {
+        this.model.find({}, (err:any, docs:any) => {
             if (err) {return console.error(err);}
             res.json(docs);
         });
     }
-    insert = (req, res) => {
+    public insert = (req: any , res: any) => {
         const obj = new this.model(req.body);
-        obj.save( (err, item) => {
+        obj.save( (err:any, item:any) => {
             if (err) return console.error(err);
             res.status(200).json(item);
         });
     }
-    delete = (req, res) => {
-        this.model.findOneAndRemove( {id: req.params.id}), (err, obj) => {
+    public delete = (req: any, res: any) => {
+        this.model.findOneAndRemove( {id: req.params.id}), (err: any, obj:any) => {
             if (err) return console.error(err);
             res.sendStatus(200);
         }
     }
-    update = (req, res)=> {
-        this.model.findOneAndUpdate({id : req.params.id}, req.body, (err) => {
+    public  update = (req: any, res: any)=> {
+        this.model.findOneAndUpdate({id : req.params.id}, req.body, (err:any) => {
             if (err) return console.error(err);
             res.sendStatus(200);
         })
     }
-    get = (req, res) => {
-        this.model.findOne( {id: req.params.id}), (err, obj) => {
+    public get = (req: any, res: any) => {
+        this.model.findOne( {id: req.params.id}), (err:any, obj:any) => {
             if (err) return console.error(err);
             res.json(obj);
         }
     }
 }
 
-export default Base;
