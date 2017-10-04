@@ -4,8 +4,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const visitorModel = require("../models/visitorModel");
 const hostModel = require("../models/hostModel");
 const visitModel = require("../models/visitModel");
+// email service
 // create models controllers based on the baseController
 const baseController_1 = require("./baseController");
+const mail_service_1 = require("../../mail-service");
 let visitorCtrl = new baseController_1.default(visitorModel.default);
 let hostCtrl = new baseController_1.default(hostModel.default);
 let visitCtrl = new baseController_1.default(visitModel.default);
@@ -28,4 +30,17 @@ exports.get_hosts = (req, res) => {
 };
 exports.get_all_hosts = (req, res) => {
     hostCtrl.getAll(req, res);
+};
+// Email function
+exports.send_email = (req, res) => {
+    let mailOptions = {
+        from: 'working.space.inc@gmail.com',
+        to: 'Daan-Van-Driel-CIC-Netherlands@ibm.com',
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!'
+    };
+    console.log(mail_service_1.default);
+    let temp = new mail_service_1.default();
+    temp.sendMail(mailOptions);
+    res.sendStatus(200);
 };

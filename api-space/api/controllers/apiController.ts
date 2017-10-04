@@ -8,8 +8,12 @@ import * as visitorModel from '../models/visitorModel';
 import * as hostModel from '../models/hostModel'; 
 import * as visitModel from '../models/visitModel'; 
 
+// email service
+
 // create models controllers based on the baseController
 import BaseCtrl from './baseController';
+import MailService from '../../mail-service';
+
 let visitorCtrl = new BaseCtrl<Model<visitorModel.IVisitorLogModel>>(visitorModel.default);
 let hostCtrl = new BaseCtrl<Model<hostModel.IHostLogModel>>(hostModel.default);
 let visitCtrl = new BaseCtrl<Model<visitModel.IVisitLogModel>>(visitModel.default);
@@ -35,3 +39,20 @@ exports.get_hosts = (req: any,res:any) => {
 exports.get_all_hosts = (req: any,res:any) => {  
   hostCtrl.getAll(req,res);
 }
+
+// Email function
+
+exports.send_email = (req: any, res:any) =>{
+  let mailOptions = {
+    from: 'working.space.inc@gmail.com',
+    to: 'Daan-Van-Driel-CIC-Netherlands@ibm.com',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+  };
+  console.log(MailService);
+
+  let temp = new MailService();
+  temp.sendMail(mailOptions);
+  res.sendStatus(200);
+}
+
