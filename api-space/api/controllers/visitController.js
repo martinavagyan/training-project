@@ -13,16 +13,13 @@ class Visit extends baseController_1.default {
                     NewReqBody[key] = req.body[key];
                 }
                 */
-            let jsonHost = JSON.parse(req.body.host);
-            console.log(req.body.date);
             var newReqBody = {
                 entryId: req.body.id,
                 name: req.body.name,
                 email: req.body.email,
                 date: new Date(req.body.date),
-                hostId: jsonHost._id
+                hostId: req.body.host._id
             };
-            console.log(newReqBody);
             const obj = new this.model(newReqBody);
             obj.save((err, item) => {
                 if (err)

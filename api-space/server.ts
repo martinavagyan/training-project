@@ -10,9 +10,8 @@ mongoose.connect('mongodb://localhost/Tododb',{
 }); 
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var routes = require('./api/routes/apiRoutes'); //importing route
 routes(app); //register the route
