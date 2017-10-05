@@ -10,6 +10,7 @@ export class ApiRequestsService {
   getUsersEndpoint:string = 'get-all-users/';
   getHostEndpoint:string = 'get-all-hosts/';
   createVisitEndpoint:string = 'visit/';
+  getHostsEndpoint:string = 'get-all-hosts/';
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,10 @@ export class ApiRequestsService {
   
   getVisits(): Observable<Object> {
     return this.http.get(this.apiEndpoint+this.getHostEndpoint);
+  }
+
+  getHosts(): Observable<[User]>{
+    return this.http.get<[User]>(this.apiEndpoint+this.getHostsEndpoint);
   }
 
 }
