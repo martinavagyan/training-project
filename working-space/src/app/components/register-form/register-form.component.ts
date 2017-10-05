@@ -23,7 +23,7 @@ export class RegisterFormComponent implements OnInit {
 
   showAdminPanel() {
     this.admin = !this.admin;
-    this.apiRequestsService.getVisits().subscribe((out) => console.log(out));
+    this.apiRequestsService.getVisits().subscribe((out) => console.log(out)); 
   }
 
   onFormSubmitted() {

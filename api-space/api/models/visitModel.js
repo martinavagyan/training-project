@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const mongoose_1 = require("mongoose");
 const VisitLogSchema = new mongoose_1.Schema({
-    hostId: String,
+    host: Object,
     entryId: String,
     name: String,
     email: String,

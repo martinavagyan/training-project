@@ -20,7 +20,7 @@ class Visit extends baseController_1.default {
                 name: req.body.name,
                 email: req.body.email,
                 date: new Date(req.body.date),
-                hostId: req.body.host._id
+                host: req.body.host
             };
             const obj = new this.model(newReqBody);
             obj.save((err, item) => {
@@ -39,6 +39,13 @@ class Visit extends baseController_1.default {
                 console.log(req.body.host.email);
                 mail_service_1.default.sendMail(mailOptions);
                 res.status(200).json(item);
+            });
+        };
+        this.get = (req, res) => {
+            this.model.findOne({ 'entryId': req.params.entryId }, function (err, obj) {
+                if (err)
+                    return console.error(err);
+                res.json(obj);
             });
         };
     }

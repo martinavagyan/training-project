@@ -30,7 +30,7 @@ export default class Visit<T extends any> extends Base<T> {
             name: req.body.name,
             email: req.body.email,
             date: new Date(req.body.date),
-            hostId: req.body.host._id
+            host: req.body.host
         }
         const obj = new this.model(newReqBody);
         obj.save((err: any, item: any) => {
@@ -51,5 +51,12 @@ export default class Visit<T extends any> extends Base<T> {
             res.status(200).json(item);
         });
 
+    }
+
+    public get = (req: any, res: any) => {
+        this.model.findOne( {'entryId': req.params.entryId}, function(err:any, obj:any) {
+            if (err) return console.error(err);
+            res.json(obj);
+        });
     }
 }

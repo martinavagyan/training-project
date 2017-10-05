@@ -1,8 +1,8 @@
-<div class = "user-list-area">
+<div class = "visit-list-area">
   <ul>
-    <li *ngFor="let user of users">
-        <span class="glyphicon glyphicon-user icon-color" aria-hidden="true"></span>
-        <a class = "item-cursor" (click)="userClicked({entryId: user.entryId, name:user.name, email: user.email, _id: user._id})">{{user.name}}</a>   
+    <li *ngFor="let visit of visits">
+        <!-- <span class="glyphicon glyphicon-user icon-color" aria-hidden="true"></span> -->
+        <pre class = "visit">{{visit | json}}</pre>   
     </li>
   </ul>
 </div>

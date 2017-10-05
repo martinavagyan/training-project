@@ -21,16 +21,17 @@ export default class Base<T extends any> {
         });
     }
     public delete = (req: any, res: any) => {
-        this.model.findOneAndRemove( {id: req.params.id}), (err: any, obj:any) => {
+        this.model.findOneAndRemove( {id: req.params.id}, (err: any, obj:any) => {
             if (err) return console.error(err);
             res.sendStatus(200);
-        }
+        })
     }
     public deleteAll = (req: any, res: any) => {
-        this.model.Remove({}), (err: any, obj:any) => {
-            if (err) return console.error(err);
+        console.log("deleting");
+        this.model.remove({}, (err: any) => {
+            if (err) return console.error(err);            
             res.sendStatus(200);
-        }
+        });
     }    
     public update = (req: any, res: any)=> {
         this.model.findOneAndUpdate({id : req.params.id}, req.body, (err:any) => {

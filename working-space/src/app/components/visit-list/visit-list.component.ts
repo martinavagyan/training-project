@@ -1,24 +1,24 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import { UsersService } from '../../users.service';
-import { User } from '../../user';
+import { Visit } from '../../visit';
 import { ApiRequestsService } from '../../api-requests.service';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-visit-list',
+  templateUrl: './visit-list.component.html',
+  styleUrls: ['./visit-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class VisitListComponent implements OnInit {
 
-  users: Array<User> = [];
+  visits: Visit[] = [];
 
   @Output()
   onUserClick = new EventEmitter<void>();
   
   constructor(public apiRequestsService: ApiRequestsService) {
-    apiRequestsService.getHosts().subscribe(response => this.users = response);
+    apiRequestsService.getVisits().subscribe(response => this.visits = response);
   }
 
+  
   userClicked(user){
     console.log("the user with id: " + user.id + " , is clicked");
     this.onUserClick.emit(user);

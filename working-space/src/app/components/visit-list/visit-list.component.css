@@ -1,10 +1,10 @@
-.user-list-area{
+.visit-list-area{
     background: white;
 }
 
-.item-cursor{
+/* .item-cursor{
     cursor: pointer;
-}
+} */
 
 .icon-color{
     color: grey;

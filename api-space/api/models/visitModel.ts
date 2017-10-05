@@ -1,8 +1,9 @@
 import mongoose = require('mongoose');
+import { User } from './user';
 import { Schema, Model, Document } from 'mongoose';
 
 export interface IVisitLog {
-  hostId      : string,
+  host        : User,
   entryId     : string,
   name        : string,
   email       : string,
@@ -10,7 +11,7 @@ export interface IVisitLog {
 }
 
 const VisitLogSchema: Schema = new Schema({
-    hostId      : String,
+    host        : Object,
     entryId     : String,
     name        : String,
     email       : String,

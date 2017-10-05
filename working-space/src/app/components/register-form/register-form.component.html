@@ -10,7 +10,7 @@
             <button type="button" (click)="showAdminPanel()">Admin</button>
          </div>
          <div *ngIf="admin" class="admin-panel">
-            <p>Show all visits</p>
+            <app-visit-list></app-visit-list>
          </div>
 
         <div *ngIf="!admin" class="panel-body container-style">
