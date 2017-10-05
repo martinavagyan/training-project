@@ -5,7 +5,15 @@
         <!-- <div class="panel-heading">
           <h3 class="panel-title">Please register for the visit <small>It's that easy!</small></h3>
          </div> -->
-        <div class="panel-body container-style">
+         
+         <div class="admin-button">
+            <button type="button" (click)="showAdminPanel()">Admin</button>
+         </div>
+         <div *ngIf="admin" class="admin-panel">
+            <p>Show all visits</p>
+         </div>
+
+        <div *ngIf="!admin" class="panel-body container-style">
     
           <form (submit)="onFormSubmitted()" #registrationForm="ngForm" >
 

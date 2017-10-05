@@ -9,20 +9,17 @@ export class UsersService {
     {
       entryId: 1,
       name: 'Martin',
-      email: 'martinavagyan@gmail.com',
-      _id: 'sds'
+      email: 'martinavagyan@gmail.com'
     },
     {
       entryId: 5,
       name: 'Lars',
-      email: 'larssteenhuis@gmail.com',
-      _id: 'sdss'
+      email: 'larssteenhuis@gmail.com'
     },
     {
       entryId: 3,
       name: 'Daan',
-      email: 'dan-van@ibm.com',
-      _id: 'ssds'
+      email: 'dan-van@ibm.com'
     }
   ];
 

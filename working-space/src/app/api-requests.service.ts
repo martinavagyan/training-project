@@ -8,6 +8,7 @@ export class ApiRequestsService {
 
   apiEndpoint:string = 'http://localhost:3000/api/';
   getUsersEndpoint:string = 'get-all-users/';
+  getHostEndpoint:string = 'get-all-hosts/';
   createVisitEndpoint:string = 'visit/';
 
   constructor(private http: HttpClient) { }
@@ -18,6 +19,10 @@ export class ApiRequestsService {
 
   createVisit(jsonBody): Observable<User> {
     return this.http.post<User>(this.apiEndpoint+this.createVisitEndpoint,jsonBody);
+  }
+  
+  getVisits(): Observable<Object> {
+    return this.http.get(this.apiEndpoint+this.getHostEndpoint);
   }
 
 }
