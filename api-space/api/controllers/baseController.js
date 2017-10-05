@@ -25,6 +25,13 @@ class Base {
                 res.sendStatus(200);
             };
         };
+        this.deleteAll = (req, res) => {
+            this.model.Remove({}), (err, obj) => {
+                if (err)
+                    return console.error(err);
+                res.sendStatus(200);
+            };
+        };
         this.update = (req, res) => {
             this.model.findOneAndUpdate({ id: req.params.id }, req.body, (err) => {
                 if (err)

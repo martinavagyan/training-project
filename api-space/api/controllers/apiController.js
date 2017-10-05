@@ -16,6 +16,12 @@ exports.register_a_visit = (req, res) => {
 exports.get_all_visits = (req, res) => {
     visitCtrl.getAll(req, res);
 };
+exports.remove_a_visit = (req, res) => {
+    visitCtrl.delete(req, res);
+};
+exports.remove_all_visits = (req, res) => {
+    visitCtrl.deleteAll(req, res);
+};
 // Host functions
 exports.register_a_host = (req, res) => {
     hostCtrl.insert(req, res);
@@ -25,6 +31,12 @@ exports.get_hosts = (req, res) => {
 };
 exports.get_all_hosts = (req, res) => {
     hostCtrl.getAll(req, res);
+};
+exports.remove_a_host = (req, res) => {
+    hostCtrl.delete(req, res);
+};
+exports.remove_all_hosts = (req, res) => {
+    hostCtrl.deleteAll(req, res);
 };
 // Email function
 exports.send_email = (req, res) => {
