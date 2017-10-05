@@ -10,13 +10,15 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UsersService } from './users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiRequestsService } from './api-requests.service';
+import { VisitListComponent } from './components/visit-list/visit-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     RegisterFormComponent,
-    UserListComponent
+    UserListComponent,
+    VisitListComponent
   ],
   imports: [
     BrowserModule,
