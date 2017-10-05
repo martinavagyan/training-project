@@ -15,7 +15,7 @@ export class UsersService {
     {
       entryId: 5,
       name: 'Lars',
-      email: 'larsstain@yahoo.com',
+      email: 'larssteenhuis@gmail.com',
       _id: 'sdss'
     },
     {

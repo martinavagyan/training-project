@@ -17,7 +17,6 @@ import VisitCtrl from './visitController';
 import MailService from '../../mail-service';
 
 
-let visitorCtrl = new BaseCtrl<Model<visitorModel.IVisitorLogModel>>(visitorModel.default);
 let hostCtrl = new BaseCtrl<Model<hostModel.IHostLogModel>>(hostModel.default);
 let visitCtrl = new VisitCtrl<Model<visitModel.IVisitLogModel>>(visitModel.default);
 
@@ -25,9 +24,7 @@ let visitCtrl = new VisitCtrl<Model<visitModel.IVisitLogModel>>(visitModel.defau
 exports.register_a_visit = (req: any,res:any) => {  
     visitCtrl.insert(req,res);   
 }
-exports.get_visitor = (req: any,res:any) => {  
-  visitorCtrl.get(req,res);
-}
+
 exports.get_all_visits = (req: any,res:any) => {  
   visitCtrl.getAll(req,res);
 }
@@ -42,6 +39,7 @@ exports.get_hosts = (req: any,res:any) => {
 exports.get_all_hosts = (req: any,res:any) => {  
   hostCtrl.getAll(req,res);
 }
+
 
 // Email function
 

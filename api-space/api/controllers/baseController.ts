@@ -14,7 +14,6 @@ export default class Base<T extends any> {
         });
     }
     public insert = (req: any , res: any) => {
-        console.log('troll');
         const obj = new this.model(req.body);
         obj.save( (err:any, item:any) => {
             if (err) return console.error(err);

@@ -31,7 +31,7 @@ export class RegisterFormComponent implements OnInit {
         "date": "Wed Oct 04 2017 16:08:22 GMT+0200 (CEST)",
         "host": "{ \"id\": 1, \"name\":\"lars\",\"email\": \"email@email.com\", \"_id\": \"sadasdasdsa\"}"
     };
-    this.apiRequestsService.createVisit(jsonBody).subscribe();
+    this.apiRequestsService.createVisit(this.registration).subscribe();
   }
 
   addHost<User>(hostUser) {

@@ -11,7 +11,6 @@ class Base {
             });
         };
         this.insert = (req, res) => {
-            console.log('troll');
             const obj = new this.model(req.body);
             obj.save((err, item) => {
                 if (err)
