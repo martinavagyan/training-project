@@ -1,6 +1,7 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { UsersService } from '../../users.service';
 import { User } from '../../user';
+import { ApiRequestsService } from '../../api-requests.service';
 
 @Component({
   selector: 'app-user-list',
@@ -14,8 +15,8 @@ export class UserListComponent implements OnInit {
   @Output()
   onUserClick = new EventEmitter<void>();
   
-  constructor(usersService: UsersService) {
-    this.users = usersService.getUsers();
+  constructor(usersService: UsersService,public apiRequestsService: ApiRequestsService) {
+    apiRequestsService.getHosts().subscribe(response => this.users = response);
   }
 
   userClicked(user){
