@@ -10,18 +10,19 @@ import { ApiRequestsService } from '../../api-requests.service';
 export class VisitListComponent implements OnInit {
 
   visits: Visit[] = [];
-
-  @Output()
-  onUserClick = new EventEmitter<void>();
+  dateVar: Date;
   
   constructor(public apiRequestsService: ApiRequestsService) {
     apiRequestsService.getVisits().subscribe(response => this.visits = response);
   }
 
   
-  userClicked(user){
-    console.log("the user with id: " + user.id + " , is clicked");
-    this.onUserClick.emit(user);
+  sortDate() {
+    this.apiRequestsService.sortVisits().subscribe((response) => this.visits = response); 
+  }
+
+  filterDate() {
+    this.apiRequestsService.filterVisits(this.dateVar).subscribe((response) => this.visits = response); 
   }
 
   ngOnInit() {

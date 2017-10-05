@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
 import { Registration } from '../../registration';
 import { ApiRequestsService } from '../../api-requests.service';
+
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -20,6 +21,7 @@ export class RegisterFormComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
   showAdminPanel() {
     this.admin = !this.admin;

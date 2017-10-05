@@ -36,6 +36,15 @@ exports.remove_all_visits = (req: any,res:any) => {
   visitCtrl.deleteAll(req,res);
 }
  
+exports.sort_date = (req: any,res:any) => {  
+  visitCtrl.getDate(req,res);
+}
+
+exports.filter_visits = (req: any,res:any) => {  
+  visitCtrl.filterVisits(req,res);
+}
+
+
 // Host functions
 exports.register_a_host = (req: any,res:any) => {  
   hostCtrl.insert(req,res);   

@@ -2,11 +2,32 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Base {
     constructor(_model) {
+        this.sortDir = 1;
         this.getAll = (req, res) => {
             this.model.find({}, (err, docs) => {
                 if (err) {
                     return console.error(err);
                 }
+                res.json(docs);
+            });
+        };
+        this.getDate = (req, res) => {
+            let x = this.model.find({}).sort({ date: this.sortDir }).exec((err, docs) => {
+                if (err) {
+                    return console.log(err);
+                }
+                if (this.sortDir == 1) {
+                    this.sortDir = -1;
+                }
+                else {
+                    this.sortDir = 1;
+                }
+                res.json(docs);
+            });
+        };
+        this.filterVisits = (req, res) => {
+            console.log(typeof (req.params.filterDate));
+            this.model.find({ "date": { $gte: new Date(req.params.filterDate) } }, (err, docs) => {
                 res.json(docs);
             });
         };

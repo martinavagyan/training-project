@@ -23,6 +23,12 @@ exports.remove_a_visit = (req, res) => {
 exports.remove_all_visits = (req, res) => {
     visitCtrl.deleteAll(req, res);
 };
+exports.sort_date = (req, res) => {
+    visitCtrl.getDate(req, res);
+};
+exports.filter_visits = (req, res) => {
+    visitCtrl.filterVisits(req, res);
+};
 // Host functions
 exports.register_a_host = (req, res) => {
     hostCtrl.insert(req, res);

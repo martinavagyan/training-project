@@ -1,4 +1,9 @@
 <div class = "visit-list-area">
+    
+<form (submit) ="filterDate()" #dateForm="ngForm">
+  <input id="date" type="date" [(ngModel)]="dateVar" name="date">
+  <button type="submit">Sort on Date</button>
+</form>
   <ul>
     <li *ngFor="let visit of visits">
         <!-- <span class="glyphicon glyphicon-user icon-color" aria-hidden="true"></span> -->

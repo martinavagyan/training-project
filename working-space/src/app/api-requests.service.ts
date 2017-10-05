@@ -13,6 +13,8 @@ export class ApiRequestsService {
   createVisitEndpoint:string = 'visit/';
   
   getVisitEndpoint:string = 'get-all-visits/';
+  sortVisitEndpoint:string = 'get-all-visits-date/';
+  filterVisitEndpoint:string = 'filter-visits/';
 
   constructor(private http: HttpClient) { }
 
@@ -28,9 +30,18 @@ export class ApiRequestsService {
   getVisits(): Observable<[Visit]> {
     return this.http.get<[Visit]>(this.apiEndpoint+this.getVisitEndpoint);
   }
+  
+  sortVisits(): Observable<[Visit]> {
+    return this.http.get<[Visit]>(this.apiEndpoint+this.sortVisitEndpoint);
+  }
+
 
   getHosts(): Observable<[User]>{
     return this.http.get<[User]>(this.apiEndpoint+this.getHostEndpoint);
+  }
+
+  filterVisits(dateVar): Observable<[Visit]> {    
+    return this.http.get<[Visit]>(this.apiEndpoint+this.filterVisitEndpoint + dateVar);
   }
 
 }
