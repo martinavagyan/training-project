@@ -3,6 +3,19 @@
 }
 
 .container-style{
-    background-color: rgba(255,255,255,0.6) !important;
+    background-color: rgba(200,200,200,0.5) !important;
 }
 
+textarea {
+    resize: none;
+}
+.btn-menu-style{
+    background-color: rgba(210,210,210,0.5) !important;
+    /* border: 1px solid rgb(195,195,195); */
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0;
+}
+.btn-menu-style:hover { 
+    background-color: rgba(210,210,210,0.7) !important;
+}

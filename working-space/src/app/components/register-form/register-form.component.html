@@ -1,13 +1,20 @@
 <div class="container">
     <div class="row centered-form">
     <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      <div class="panel panel-default container-style">
+      <div class="panel container-style">
         <!-- <div class="panel-heading">
           <h3 class="panel-title">Please register for the visit <small>It's that easy!</small></h3>
          </div> -->
          
          <div class="admin-button">
-            <button type="button" (click)="showAdminPanel()">Admin</button>
+            <button type="button" (click)="showAdminPanel()" class="btn btn-secondary btn-menu-style">
+                <div *ngIf="!admin" class="admin-panel">
+                    Visits
+                </div>
+                <div *ngIf="admin" class="admin-panel">
+                    Register
+                </div>
+              </button>
          </div>
          <div *ngIf="admin" class="admin-panel">
             <app-visit-list></app-visit-list>
@@ -17,18 +24,18 @@
     
           <form (submit)="onFormSubmitted()" #registrationForm="ngForm" >
 
-            <input name="name" type="text" [(ngModel)]="registration.name" required class="form-control input-sm" placeholder="Name"><br>
+            <input name="name" type="text" [(ngModel)]="registration.name" required class="form-control input-sm" placeholder="Your name"><br>
             <div style="color: red" *ngIf="registrationForm.form.controls.name?.invalid" hidden>Name is not valid!</div>
 
-            <input name="email" type="email" [(ngModel)]="registration.email" email required class="form-control input-sm" placeholder="Email"><br>
+            <input name="email" type="email" [(ngModel)]="registration.email" email required class="form-control input-sm" placeholder="Your email"><br>
             <div style="color: red" *ngIf="registrationForm.form.controls.email?.invalid" [ngClass] = "{hidden: registrationForm.form.controls.email?.invalid}">Email is not valid!</div>
 
             <textarea name="comment" type="text" [(ngModel)]="registration.comment" class="form-control input-sm" placeholder="Comment"></textarea><br>
 
-            <input name="host" type="text" [(ngModel)]="registration.host.name" class="form-control input-sm" placeholder="Host"><br>            
+            <input name="host" type="text" [(ngModel)]="registration.host.name" class="form-control input-sm" placeholder="Your host"><br>            
             <app-user-list (onUserClick) = "addHost($event)"></app-user-list>
            
-            <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-transparent btn-primary">Register</button>
+            <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Register</button>
           </form>
   	    </div>
       </div>

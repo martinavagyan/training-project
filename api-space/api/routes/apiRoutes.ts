@@ -16,7 +16,6 @@ module.exports = function(app: any) {
 
   app.route('/api/remove-all-hosts').delete(apiController.remove_all_hosts);
   app.route('/api/remove-all-visits').delete(apiController.remove_all_visits);
-
   
   //app.route('/api/get-host/:hostId').get(apiController.get_host);
   
