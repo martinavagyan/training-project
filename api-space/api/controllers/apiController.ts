@@ -28,6 +28,12 @@ exports.register_a_visit = (req: any,res:any) => {
 exports.get_all_visits = (req: any,res:any) => {  
   visitCtrl.getAll(req,res);
 }
+exports.remove_a_visit = (req: any,res:any) => {  
+  visitCtrl.delete(req,res);
+}
+exports.remove_all_visits = (req: any,res:any) => {  
+  visitCtrl.deleteAll(req,res);
+}
  
 // Host functions
 exports.register_a_host = (req: any,res:any) => {  
@@ -39,7 +45,12 @@ exports.get_hosts = (req: any,res:any) => {
 exports.get_all_hosts = (req: any,res:any) => {  
   hostCtrl.getAll(req,res);
 }
-
+exports.remove_a_host = (req: any,res:any) => {  
+  hostCtrl.delete(req,res);
+}
+exports.remove_all_hosts = (req: any,res:any) => {  
+  hostCtrl.deleteAll(req,res);
+}
 
 // Email function
 

@@ -26,7 +26,13 @@ export default class Base<T extends any> {
             res.sendStatus(200);
         }
     }
-    public  update = (req: any, res: any)=> {
+    public deleteAll = (req: any, res: any) => {
+        this.model.Remove({}), (err: any, obj:any) => {
+            if (err) return console.error(err);
+            res.sendStatus(200);
+        }
+    }    
+    public update = (req: any, res: any)=> {
         this.model.findOneAndUpdate({id : req.params.id}, req.body, (err:any) => {
             if (err) return console.error(err);
             res.sendStatus(200);
