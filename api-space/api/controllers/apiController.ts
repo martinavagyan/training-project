@@ -21,7 +21,8 @@ let hostCtrl = new BaseCtrl<Model<hostModel.IHostLogModel>>(hostModel.default);
 let visitCtrl = new VisitCtrl<Model<visitModel.IVisitLogModel>>(visitModel.default);
 
 // Visitor functions
-exports.register_a_visit = (req: any,res:any) => {  
+exports.register_a_visit = (req: any,res:any) => { 
+    console.log("registering");
     visitCtrl.insert(req,res);   
 }
 

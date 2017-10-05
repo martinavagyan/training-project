@@ -8,6 +8,7 @@ module.exports = function(app: any) {
   // todoList Routes
   app.route('/api/visit/').post(apiController.register_a_visit);
   app.route('/api/get-all-visits').get(apiController.get_all_visits);
+  
   app.route('/api/get-all-hosts').get(apiController.get_all_hosts);
   app.route('/api/register-host').post(apiController.register_a_host);
 

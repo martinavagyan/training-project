@@ -7,7 +7,7 @@ import { Visit } from './visit';
 @Injectable()
 export class ApiRequestsService {
 
-  apiEndpoint:string = 'http://localhost:3000/api/';
+  apiEndpoint:string = 'http://localhost:4200/api/';
   getUsersEndpoint:string = 'get-all-users/';
   getHostEndpoint:string = 'get-all-hosts/';
   createVisitEndpoint:string = 'visit/';
@@ -20,8 +20,9 @@ export class ApiRequestsService {
     return this.http.get<User>(this.apiEndpoint+this.getUsersEndpoint);
   }
 
-  createVisit(jsonBody): Observable<Visit> {
-    return this.http.post<Visit>(this.apiEndpoint+this.createVisitEndpoint,jsonBody);
+  createVisit(jsonBody): Observable<void> {
+    console.log(jsonBody);
+    return this.http.post<void>(this.apiEndpoint+this.createVisitEndpoint,jsonBody);
   }
   
   getVisits(): Observable<[Visit]> {

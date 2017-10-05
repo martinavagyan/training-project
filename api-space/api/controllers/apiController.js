@@ -11,6 +11,7 @@ let hostCtrl = new baseController_1.default(hostModel.default);
 let visitCtrl = new visitController_1.default(visitModel.default);
 // Visitor functions
 exports.register_a_visit = (req, res) => {
+    console.log("registering");
     visitCtrl.insert(req, res);
 };
 exports.get_all_visits = (req, res) => {
