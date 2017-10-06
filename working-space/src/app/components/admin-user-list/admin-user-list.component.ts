@@ -4,24 +4,19 @@ import { User } from '../../user';
 import { ApiRequestsService } from '../../api-requests.service';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-admin-user-list',
+  templateUrl: './admin-user-list.component.html',
+  styleUrls: ['./admin-user-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class AdminUserListComponent implements OnInit {
 
   users: Array<User> = [];
 
   @Output()
   onUserClick = new EventEmitter<void>();
   
-  constructor(private userSvc:UsersService) {
+  constructor(private userSvc:UsersService) {    
     this.users = userSvc.getUsers();
-  }
-
-  userClicked(user){
-    console.log("the user with id: " + user.id + " , is clicked");
-    this.onUserClick.emit(user);
   }
 
   ngOnInit() {

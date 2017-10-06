@@ -9,7 +9,6 @@ import { ApiRequestsService } from '../../api-requests.service';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
-  admin: boolean = false;
   registration: Registration = {host: {name:''}};
 
   constructor(public apiRequestsService: ApiRequestsService) { }
@@ -18,27 +17,13 @@ export class RegisterFormComponent implements OnInit {
   submitForm(values) {
     console.log(values);
   }
-
   ngOnInit() {
-  }
-
-
-  showAdminPanel() {
-    this.admin = !this.admin;
-    this.apiRequestsService.getVisits().subscribe((out) => console.log(out)); 
   }
 
   onFormSubmitted() {
     console.log(this.registration);
     this.registration.date = new Date();
     //http request
-    let jsonBody = { 
-        "id": 1,
-        "name": "lars",
-        "email": "asd@email.com",
-        "date": "Wed Oct 04 2017 16:08:22 GMT+0200 (CEST)",
-        "host": "{ \"id\": 1, \"name\":\"lars\",\"email\": \"email@email.com\", \"_id\": \"sadasdasdsa\"}"
-    };
     this.apiRequestsService.createVisit(this.registration).subscribe();
   }
 
