@@ -3,9 +3,13 @@
       <input type="text" class="form-control input-sm" placeholder="Host" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+
+          <img style="vertical-align:middle;" aria-hidden src="/assets/{{option.name}}.jpg" height="50" />            
           <span (click)="hostClicked(option)">
             {{ option.name }}
           </span>
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="color:grey;"></span>
+          
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
