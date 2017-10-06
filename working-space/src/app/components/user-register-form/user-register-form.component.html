@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default container-style">
+    
+          <form (submit)="onFormSubmitted()" #userForm="ngForm" >
+
+            <input name="name" type="text" [(ngModel)]="user.name" required class="form-control input-sm" placeholder="Name"><br>
+            <div style="color: red" *ngIf="userForm.form.controls.name?.invalid" hidden>Name is not valid!</div>
+
+            <input name="email" type="email" [(ngModel)]="user.email" email required class="form-control input-sm" placeholder="Email"><br>
+            <div style="color: red" *ngIf="userForm.form.controls.email?.invalid" [ngClass] = "{hidden: userForm.form.controls.email?.invalid}">Email is not valid!</div>
+
+            <button type="submit" [disabled]="userForm.invalid" class="btn btn-transparent btn-primary">Register</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

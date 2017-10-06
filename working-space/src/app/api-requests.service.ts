@@ -15,7 +15,8 @@ export class ApiRequestsService {
   getVisitEndpoint:string = 'get-all-visits/';
   sortVisitEndpoint:string = 'get-all-visits-date/';
   filterVisitEndpoint:string = 'filter-visits/';
-
+  createHostEndpoint:string = '/register-host';
+  
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User> {
@@ -23,7 +24,6 @@ export class ApiRequestsService {
   }
 
   createVisit(jsonBody): Observable<void> {
-    console.log(jsonBody);
     return this.http.post<void>(this.apiEndpoint+this.createVisitEndpoint,jsonBody);
   }
   
@@ -35,10 +35,13 @@ export class ApiRequestsService {
     return this.http.get<[Visit]>(this.apiEndpoint+this.sortVisitEndpoint);
   }
 
-
   getHosts(): Observable<[User]>{
     return this.http.get<[User]>(this.apiEndpoint+this.getHostEndpoint);
   }
+
+  createHost(jsonBody): Observable<void> {
+    return this.http.post<void>(this.apiEndpoint+this.createHostEndpoint,jsonBody);    
+  }  
 
   filterVisits(dateVar): Observable<[Visit]> {    
     return this.http.get<[Visit]>(this.apiEndpoint+this.filterVisitEndpoint + dateVar);

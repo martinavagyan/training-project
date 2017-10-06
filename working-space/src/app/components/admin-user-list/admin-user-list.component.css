@@ -1,10 +1,10 @@
-.user-list-area{
+.admin-user-list-area{
     background: white;
 }
 
-.item-cursor{
+/* .item-cursor{
     cursor: pointer;
-}
+} */
 
 .icon-color{
     color: grey;
@@ -12,4 +12,5 @@
 
 ul {
     list-style-type: none;
+    padding: 0;
 }
