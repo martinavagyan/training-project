@@ -19,7 +19,7 @@ export class RegisterFormComponent implements OnInit {
     console.log(values);
   }
 
-  ngOnInit() {
+  ngOnInit(){
   }
 
 
@@ -32,17 +32,11 @@ export class RegisterFormComponent implements OnInit {
     console.log(this.registration);
     this.registration.date = new Date();
     //http request
-    let jsonBody = { 
-        "id": 1,
-        "name": "lars",
-        "email": "asd@email.com",
-        "date": "Wed Oct 04 2017 16:08:22 GMT+0200 (CEST)",
-        "host": "{ \"id\": 1, \"name\":\"lars\",\"email\": \"email@email.com\", \"_id\": \"sadasdasdsa\"}"
-    };
     this.apiRequestsService.createVisit(this.registration).subscribe();
   }
 
   addHost<User>(hostUser) {
+    //console.log(JSON.parse(hostUser));
     this.registration.host = hostUser;
   }
 }

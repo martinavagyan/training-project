@@ -32,8 +32,10 @@
 
             <textarea name="comment" type="text" [(ngModel)]="registration.comment" class="form-control input-sm" placeholder="Comment"></textarea><br>
 
-            <input name="host" type="text" [(ngModel)]="registration.host.name" class="form-control input-sm" placeholder="Your host"><br>            
-            <app-user-list (onUserClick) = "addHost($event)"></app-user-list>
+            <!-- <input name="host" type="text" [(ngModel)]="registration.host.name" class="form-control input-sm" placeholder="Your host"><br>             -->
+            <!-- <app-user-list (onUserClick) = "addHost($event)"></app-user-list> -->
+
+            <app-autocomplete-host (onHostClicked) = "addHost($event)"></app-autocomplete-host>
            
             <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Register</button>
           </form>
@@ -43,5 +45,5 @@
   </div>
 </div>
 
-<!-- <pre>{{registration | json}}</pre> -->
+<pre>{{registration | json}}</pre>
 

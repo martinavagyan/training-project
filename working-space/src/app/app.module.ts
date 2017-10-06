@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,11 @@ import { UsersService } from './users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiRequestsService } from './api-requests.service';
 import { VisitListComponent } from './components/visit-list/visit-list.component';
+import { DatePickerModule} from 'angular-io-datepicker'
+import {MatAutocompleteModule} from '@angular/material';
+import { AutocompleteHostComponent } from './components/autocomplete-host/autocomplete-host.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,13 +23,17 @@ import { VisitListComponent } from './components/visit-list/visit-list.component
     HomePageComponent,
     RegisterFormComponent,
     UserListComponent,
-    VisitListComponent
+    VisitListComponent,
+    AutocompleteHostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    DatePickerModule,
+    MatAutocompleteModule
   ],
   providers: [
     UsersService,
