@@ -9,7 +9,7 @@ export class UsersService {
   users: User[] = [];
   
   constructor(public apiRequestsService: ApiRequestsService) {
-    apiRequestsService.getHosts().subscribe(response => this.users = response);
+    apiRequestsService.getHosts().subscribe(response => this.users = response);    
   }
 
   getUsers(): User[] {

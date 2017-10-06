@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
   onUserClick = new EventEmitter<void>();
   
   constructor(private userSvc:UsersService) {
-    this.users = userSvc.getUsers();
+    var getAllUsers = setTimeout(() => this.users = userSvc.getUsers(), 1000);    
   }
 
   userClicked(user){
