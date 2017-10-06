@@ -17,7 +17,9 @@ export class RegisterFormComponent implements OnInit {
   submitForm(values) {
     console.log(values);
   }
-  ngOnInit() {
+  
+  ngOnInit(){
+
   }
 
   addPicture(pic) {
@@ -32,6 +34,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   addHost<User>(hostUser) {
+    //console.log(JSON.parse(hostUser));
     this.registration.host = hostUser;
   }
 }

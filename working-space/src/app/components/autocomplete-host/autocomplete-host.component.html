@@ -1,0 +1,12 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" class="form-control input-sm" placeholder="Host" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          <span (click)="hostClicked(option)">
+            {{ option.name }}
+          </span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

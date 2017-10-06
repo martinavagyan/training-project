@@ -1,9 +1,22 @@
 <div class = "visit-list-area">
     
-<form (submit) ="filterDate()" #dateForm="ngForm">
-  <input id="date" type="date" [(ngModel)]="dateVar" name="date">
-  <button type="submit">Sort on Date</button>
-</form>
+
+    <!-- <md-form-field>
+        <input name = "date" [(ngModel)]="dateVar" mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+        <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+        <md-datepicker #picker></md-datepicker>
+    </md-form-field> -->
+
+        <!-- <date-picker name="date" [(ngModel)]="dateVar" mode="date" ></date-picker> -->
+
+    <form (submit) ="filterDate()" #dateForm="ngForm">
+            
+        <input id="date" type="date" [(ngModel)]="dateVar" name="date">
+        <button type="submit" class = "btn btn-secondary">Sort on Date</button>
+    </form>
+    <form action=""></form>
+    <!-- <input id="date" type="date" [(ngModel)]="dateVar" name="date">
+    <button type = "submit" clsass = "btn btn-primary"></button> -->
   <ul>
     <li *ngFor="let visit of visits">
         <!-- <span class="glyphicon glyphicon-user icon-color" aria-hidden="true"></span> -->
