@@ -16,6 +16,7 @@
                 </div>
               </button>
          </div>
+
          <div *ngIf="admin" class="admin-panel">
             <app-visit-list></app-visit-list>
          </div>
@@ -34,7 +35,7 @@
 
             <input name="host" type="text" [(ngModel)]="registration.host.name" class="form-control input-sm" placeholder="Your host"><br>            
             <app-user-list (onUserClick) = "addHost($event)"></app-user-list>
-           
+            <app-web-api (createPicture) = "addPicture($event)"></app-web-api>
             <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Register</button>
           </form>
   	    </div>

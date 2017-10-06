@@ -11,6 +11,9 @@ import { UsersService } from './users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiRequestsService } from './api-requests.service';
 import { VisitListComponent } from './components/visit-list/visit-list.component';
+import { WebApiComponent } from './components/web-api/web-api.component';
+import { WebCamComponent } from 'ack-angular-webcam';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,15 @@ import { VisitListComponent } from './components/visit-list/visit-list.component
     HomePageComponent,
     RegisterFormComponent,
     UserListComponent,
-    VisitListComponent
+    VisitListComponent,
+    WebApiComponent,
+    WebCamComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
     HttpClientModule
   ],
   providers: [

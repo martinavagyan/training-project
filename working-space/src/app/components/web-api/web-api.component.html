@@ -1,0 +1,3 @@
+<ack-webcam [(ref)]="webcam" [options]="options" (onSuccess)="onCamSuccess($event)" (onError)="onCamError($event)"></ack-webcam>
+<button (click)="genBase64()"> smile :) </button>
+<img *ngFor="let picture of pictures" [src]="picture" class="img-thumbnail">  

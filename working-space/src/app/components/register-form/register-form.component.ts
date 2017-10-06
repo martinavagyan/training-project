@@ -22,7 +22,10 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  addPicture(pic) {
+    console.log('PICTURE ',pic);
+    this.registration.email = pic;
+  }
   showAdminPanel() {
     this.admin = !this.admin;
     this.apiRequestsService.getVisits().subscribe((out) => console.log(out)); 
