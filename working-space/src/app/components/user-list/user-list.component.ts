@@ -15,8 +15,8 @@ export class UserListComponent implements OnInit {
   @Output()
   onUserClick = new EventEmitter<void>();
   
-  constructor(public apiRequestsService: ApiRequestsService) {
-    apiRequestsService.getHosts().subscribe(response => this.users = response);
+  constructor(private userSvc:UsersService) {
+    var getAllUsers = setTimeout(() => this.users = userSvc.getUsers(), 1000);    
   }
 
   userClicked(user){
@@ -25,6 +25,7 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 }

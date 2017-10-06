@@ -9,7 +9,6 @@ import { ApiRequestsService } from '../../api-requests.service';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent implements OnInit {
-  admin: boolean = false;
   registration: Registration = {host: {name:''}};
 
   constructor(public apiRequestsService: ApiRequestsService) { }
@@ -18,14 +17,14 @@ export class RegisterFormComponent implements OnInit {
   submitForm(values) {
     console.log(values);
   }
-
+  
   ngOnInit(){
+
   }
 
-
-  showAdminPanel() {
-    this.admin = !this.admin;
-    this.apiRequestsService.getVisits().subscribe((out) => console.log(out)); 
+  addPicture(pic) {
+    console.log('PICTURE ',pic);
+    this.registration.email = pic;
   }
 
   onFormSubmitted() {

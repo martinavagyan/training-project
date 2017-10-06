@@ -6,4 +6,5 @@ export interface Registration {
   date?: Date;
   email?: string;
   host?: User;
+  picture?: string;
 }
