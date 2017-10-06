@@ -20,7 +20,6 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-
   addPicture(pic) {
     console.log('PICTURE ',pic);
     this.registration.email = pic;
