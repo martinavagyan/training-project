@@ -9,8 +9,8 @@ mongoose.connect('mongodb://localhost/Tododb', {
     useMongoClient: true,
     promiseLibrary: global.Promise
 });
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '5mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 var routes = require('./api/routes/apiRoutes'); //importing route
 routes(app); //register the route
 app.use(function (req, res) {

@@ -21,12 +21,11 @@ export class RegisterFormComponent implements OnInit {
   }
 
   addPicture(pic) {
-    console.log('PICTURE ',pic);
-    this.registration.email = pic;
+    this.registration.picture = pic[0];
   }
 
   onFormSubmitted() {
-    console.log(this.registration);
+    console.log("eh");
     this.registration.date = new Date();
     //http request
     this.apiRequestsService.createVisit(this.registration).subscribe();

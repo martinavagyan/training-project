@@ -5,6 +5,7 @@ import { Schema, Model, Document } from 'mongoose';
 export interface IVisitLog {
   host        : User,
   entryId     : string,
+  picture     : string,
   name        : string,
   email       : string,
   date        : Date
@@ -13,6 +14,7 @@ export interface IVisitLog {
 const VisitLogSchema: Schema = new Schema({
     host        : Object,
     entryId     : String,
+    picture     : String,
     name        : String,
     email       : String,
     date        : Date

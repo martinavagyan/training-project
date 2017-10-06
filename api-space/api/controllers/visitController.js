@@ -14,9 +14,9 @@ class Visit extends baseController_1.default {
                     NewReqBody[key] = req.body[key];
                 }
                 */
-            console.log(req.body);
             var newReqBody = {
                 entryId: req.body.id,
+                picture: req.body.picture,
                 name: req.body.name,
                 email: req.body.email,
                 date: new Date(req.body.date),
@@ -32,11 +32,9 @@ class Visit extends baseController_1.default {
                     subject: `VERY IMPORTANT!!!!`,
                     text: `${req.body.name} is waiting for you, at the counter. `
                 };
-                console.log(req.body.comment);
                 if (req.body.comment !== undefined) {
                     mailOptions.text = `${mailOptions.text} \n User comment: ${req.body.comment}`;
                 }
-                console.log(req.body.host.email);
                 mail_service_1.default.sendMail(mailOptions);
                 res.status(200).json(item);
             });
