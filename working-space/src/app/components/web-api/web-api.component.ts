@@ -20,8 +20,8 @@ export class WebApiComponent implements OnInit {
   options = {
     audio: false,
     video: true,
-    width: 400,
-    height: 400,
+    width: 200,
+    height: 200,
     cameraType: 'front'
   };
 
